@@ -2,13 +2,13 @@
 A simple Battleship game of a single user playing against computer board.
 """
 # Display greetings message to the user
+# Request user name
 # The player grid displays for the user to commence the game
 #   Create Grid
 #       Row headers
 #       Column headers
 #       Grid body
 #   Display Grid
-# Request user name
 # Get user input
 # Start turns
 # As the user, guess the location of the ship
@@ -17,6 +17,16 @@ A simple Battleship game of a single user playing against computer board.
 # Check for win or lose
 # At end of game run new game
 
+LETTER_TO_NUM = {
+    "A": 0,
+    "B": 1,
+    "C": 2,
+    "D": 3,
+    "E": 4,
+    "F": 5,
+    "G": 6,
+    "H": 7
+    }
 
 def display_greetings_message():
     """
@@ -48,6 +58,26 @@ class ShipBoard:
             row_number += 1
 
 
+def guess():
+    try:
+        x_row = int(input("Enter the row number of the ship: "))
+        while 1 > x_row or x_row > 8:
+            print("Not a valid choice, please enter a valid row number")
+            x_row = int(input("Enter the row number of the ship: "))
+    except (ValueError, KeyError):
+        print("Not a valid choice, please enter a valid row number")
+        return guess()
+    try:
+        y_column = input("Enter the column letter of the ship ").upper()
+        while y_column not in 'ABCDEFGH':
+            print("Not a valid choice, please enter a valid column letter")
+            y_column = input("Enter the column letter of the ship ").upper()
+        return int(x_row) - 1, LETTER_TO_NUM[y_column]
+    except (ValueError, KeyError):
+        print("Not a valid choice, please enter a valid column letter")
+        return guess()
+
+
 def new_game():
     """
     Create a new game
@@ -65,6 +95,7 @@ def new_game():
         "Computer Board")
     user_board.print_board()
     computer_board.print_board()
+    print(guess())
 
 
 if __name__ == '__main__':

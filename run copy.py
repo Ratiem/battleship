@@ -81,21 +81,21 @@ class ShipBoard:
 #                     sunk_ships += 1
 #         return sunk_ships
 
-#     def guess(self):
-#         try:
-#             x_row = input("Enter the row number of the ship: ")
-#             while x_row not in '12345678':
-#                 print("Not a valid choice, please enter a valid row number")
-#             x_row = input("Enter the row number of the ship: ")
+    def guess(self):
+        try:
+            x_row = input("Enter the row number of the ship: ")
+            while x_row not in '12345678':
+                print("Not a valid choice, please enter a valid row number")
+            x_row = input("Enter the row number of the ship: ")
 
-#             y_column = input("Enter the column letter of the ship ").upper()
-#             while y_column not in 'ABCDEFGH':
-#                 print("Not a valid choice, please enter a valid column letter")
-#             y_column = input("Enter the column letter of the ship ").upper()
-#             return int(x_row) - 1, ShipBoard.get_letters_to_numbers()[y_column]
-#         except ValueError and KeyError:
-#             print("Not a valid input")
-#             return self.guess
+            y_column = input("Enter the column letter of the ship ").upper()
+            while y_column not in 'ABCDEFGH':
+                print("Not a valid choice, please enter a valid column letter")
+            y_column = input("Enter the column letter of the ship ").upper()
+            return int(x_row) - 1, ShipBoard.get_letters_to_numbers()[y_column]
+        except ValueError and KeyError:
+            print("Not a valid input")
+            return self.guess
 
 
 # def new_game():
@@ -106,10 +106,10 @@ class ShipBoard:
 #     turns = 10
 #     while turns > 0:
 #         ShipBoard.print_board(user_board)
-#         user_x_row, user_y_column = Battleship.guess(object)
+#         user_x_row, user_y_column = guess()
 #         while user_board.board[user_x_row][user_y_column] == "-" or user_board.board[user_x_row][user_y_column] == "X":
 #             print("You have already guessed this one")
-#         user_x_row, user_y_column = Battleship.guess(object)
+#         user_x_row, user_y_column = guess()
 #         if computer_board.board[user_x_row][user_y_column] == "X":
 #             print("You sunk 1 of my battleship!")
 #         user_board.board[user_x_row][user_y_column] = "X"
