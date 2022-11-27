@@ -1,6 +1,8 @@
 """
 A simple Battleship game of a single user playing against computer board.
 """
+import random
+
 # Display greetings message to the user
 # Request user name
 # The player grid displays for the user to commence the game
@@ -27,6 +29,7 @@ LETTER_TO_NUM = {
     "G": 6,
     "H": 7
     }
+
 
 def display_greetings_message():
     """
@@ -59,6 +62,9 @@ class ShipBoard:
 
 
 def guess():
+    """
+    Get user input
+    """
     try:
         x_row = int(input("Enter the row number of the ship: "))
         while 1 > x_row or x_row > 8:
@@ -86,7 +92,7 @@ def new_game():
     name = input("Please enter your name: \n")
     while not name:
         print("This is not a valid name")
-        name = input("Please enter your name: \n")  
+        name = input("Please enter your name: \n")
     user_board = ShipBoard(
         [[" "] * 8 for i in range(8)],
         f"{name}'s Board")
@@ -97,6 +103,6 @@ def new_game():
     computer_board.print_board()
     print(guess())
 
-
+    
 if __name__ == '__main__':
     new_game()

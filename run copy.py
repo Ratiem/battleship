@@ -122,7 +122,7 @@ class ShipBoard:
 
 #     else:
 #         turns -= 1
-#     print(f"You have {turns} turns left")
+#         print(f"You have {turns} turns left")
 #     if turns == 0:
 #         print("Sorry you have run out of turns")
 #         ShipBoard.print_board(user_board)
