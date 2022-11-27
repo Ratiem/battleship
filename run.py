@@ -108,6 +108,33 @@ def guess():
         return guess()
 
 
+def play_game(user, computer):
+    """
+    Sets the turns for the user and board game to display
+    """
+    turns = 10
+    while turns > 0:
+        user.print_board()
+        turns -= 1
+        user_x_row, user_y_column = guess()
+        while user.board[user_x_row][user_y_column] in "-X":
+            print("You have already guessed this one!")
+            user_x_row, user_y_column = guess()
+        if computer.board[user_x_row][user_y_column] == "X":
+            print("You sunk 1 of my battleships!")
+            user.board[user_x_row][user_y_column] = "X"
+        else:
+            print("You missed my battleship!")
+            user.board[user_x_row][user_y_column] = "-"
+        if user.calculate_sunk_ships() == 5:
+            print("You have hit all 5 battleships!")
+            break
+    if user.calculate_sunk_ships() == 5:
+        print("You win!")
+    else:
+        print("You have run out of turns, you lose!")
+
+
 def new_game():
     """
     Create a new game
@@ -127,6 +154,6 @@ def new_game():
     computer_board.print_board()
     print(guess())
 
-    
+
 if __name__ == '__main__':
     new_game()
