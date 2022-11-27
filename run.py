@@ -73,6 +73,17 @@ class ShipBoard:
             self.board[self.x_row][self.y_column] = "X"
         return self
 
+    def calculate_sunk_ships(self):
+        """"
+        Calculates the number of sunken ships, this is indicated by 'X'
+        """
+        sunk_ships = 0
+        for row in self.board:
+            for column in row:
+                if column == "X":
+                    sunk_ships += 1
+        return sunk_ships
+
 
 def guess():
     """
