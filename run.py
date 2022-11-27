@@ -149,10 +149,16 @@ def new_game():
         f"{name}'s Board")
     computer_board = ShipBoard(
         [[" "] * 8 for i in range(8)],
-        "Computer Board")
-    user_board.print_board()
-    computer_board.print_board()
-    print(guess())
+        "Computer Board").add_ships()
+    play_game(user_board, computer_board)
+    if input("Would you like to play again? y/n\n").lower() == "y":
+        play_game(
+            ShipBoard([[" "] * 8 for i in range(8)], f"{name}'s Board"),
+            ShipBoard([[" "] * 8 for i in range(8)], 
+                      "computer Board").add_ships()
+            )
+    else:
+        print("Thank you for playing!")
 
 
 if __name__ == '__main__':
