@@ -60,6 +60,19 @@ class ShipBoard:
             print("%d|%s|" % (row_number, "|".join(row)))
             row_number += 1
 
+    def add_ships(self):
+        """
+        Populates a board with 5 randomly placed ships
+        """
+        for i in range(5):
+            self.x_row = random.randint(0, 7)
+            self.y_column = random.randint(0, 7)
+            while self.board[self.x_row][self.y_column] == "X":
+                self.x_row = random.randint(0, 7)
+                self.y_column = random.randint(0, 7)
+            self.board[self.x_row][self.y_column] = "X"
+        return self
+
 
 def guess():
     """
