@@ -26,6 +26,8 @@ Languages
 
 - PEP 8
     - The Code institute Python linter was used for the python code and no errors were found
+    
+![PEP 8 Validator](https://ibb.co/rxfy9M8)   
 
 - Heroku
      - This was used for the deployed of the game to get the live version.
