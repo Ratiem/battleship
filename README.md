@@ -10,7 +10,7 @@ This battleship game has a board grid of 8 by 8. There are 10 turns and once you
 display "-". 
 Once the the welcome message is displayed the user will be asked to enter their name and commence game by selecting a row number between 1 and 8 as well as a column letter between A and H. For each turn the user makes, a message will be displayed to state whether the user has entered the details as required and any incorrectly completed information returns an error. The turns also decrease with each try. Once the game turns are complete the user will be asked if they wish to play again otherwise the game is terminated. 
 
-![The Game]()
+![The Game](https://github.com/Ratiem/battleship/blob/main/assets/images/Game%20page.jpg)
 
 # Technologies Used
 
@@ -27,7 +27,7 @@ Languages
 - PEP 8
     - The Code institute Python linter was used for the python code and no errors were found
 
-![PEP 8 Validator]()   
+![PEP 8 Validator](https://github.com/Ratiem/battleship/blob/main/assets/images/CI%20Python%20linter.jpg)   
 
 - Heroku
      - This was used for the deployed of the game to get the live version.
