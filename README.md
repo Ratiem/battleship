@@ -1,31 +1,57 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# My Battleship Game
 
-Welcome Ratiem,
+This is a simple python based game called Battleship where a user plays against a hidden user , which is the computer board. The aim of the user is to guess the ships by using their keyboard.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# Features 
 
-## Reminders
+## The Game Page
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+This battleship game has a board grid of 8 by 8. There are 10 turns and once you hit a ship te grid will show an "X" but if you miss a bit the grid will
+display "-". 
+Once the the welcome message is displayed the user will be asked to enter their name and commence game by selecting a row number between 1 and 8 as well as a column letter between A and H. For each turn the user makes, a message will be displayed to state whether the user has entered the details as required and any incorrectly completed information returns an error. The turns also decrease with each try. Once the game turns are complete the user will be asked if they wish to play again otherwise the game is terminated. 
 
-## Creating the Heroku app
+![The Game]()
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+# Technologies Used
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Languages
+- Python
+- Gitpod
+- Github
+- Heroku
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Testing 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Validator Testing 
 
-Connect your GitHub repository and deploy as normal.
+- PEP 8
+    - The Code institute Python linter was used for the python code and no errors were found
 
-## Constraints
+- Heroku
+     - This was used for the deployed of the game to get the live version.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Deployment
 
------
-Happy coding!
+- The final code was pushed to GitHub.
+- Next step was to log into Heroku.
+- Create and add new app name.
+- Connect to Github.
+- Search for the repository you want to connect and connect it to Heroku.
+- Add two buildpacks from the _settings _tab. The order is as follows:
+    1. `heroku/python`
+    2. `heroku/nodejs`
+- Create a _configVar_ called `PORT`  and set it to `8000`
+- In the deployment tab scroll to end of page to deploy main branch of connected repo.
+
+### Bugs
+The first time l ran the code in the terminal I ahd a lot of indentation errors and white spaces and there were some parts of the game 
+that were not responding on the terminal hence l had to change around some parts of the code. I fixed this until l could run the code through
+the `CI python linter` int he final check this was fixed and there were no further errors found.
+
+## Credits 
+- Code institute for the course material
+- Slack community.
+- Because l was in a remote area with very limited access to the internet during the time l was meant to work on my PP3 I decided to use the example as provided in the PP3 module to build a Battleships game.
+I was limited on time hence l went with the idea to build a simple battleships game.
+- Prior to commencing my project I watched a lot of Youtube tutorial on how to build a basic single users battleships game. 
+- For some extra tutorials on understanding how to make sue of my python code I would especially like to thank my fellow student Dave Horrocks. 

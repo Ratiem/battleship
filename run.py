@@ -3,22 +3,6 @@ A simple Battleship game of a single user playing against computer board.
 """
 import random
 
-# Display greetings message to the user
-# Request user name
-# The player grid displays for the user to commence the game
-#   Create Grid
-#       Row headers
-#       Column headers
-#       Grid body
-#   Display Grid
-# Get user input
-# Start turns
-# As the user, guess the location of the ship
-# Check if duplicate guess
-# Check for hit or miss
-# Check for win or lose
-# At end of game run new game
-
 LETTER_TO_NUM = {
     "A": 0,
     "B": 1,
@@ -154,7 +138,7 @@ def new_game():
     if input("Would you like to play again? y/n\n").lower() == "y":
         play_game(
             ShipBoard([[" "] * 8 for i in range(8)], f"{name}'s Board"),
-            ShipBoard([[" "] * 8 for i in range(8)], 
+            ShipBoard([[" "] * 8 for i in range(8)],
                       "computer Board").add_ships()
             )
     else:
